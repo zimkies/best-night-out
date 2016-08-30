@@ -6,5 +6,9 @@ www/build/
 platforms/
 plugins/
 *.swp
+*.js
 .DS_Store
 Thumbs.db
+
+*.sublime-project
+*.sublime-workspace
