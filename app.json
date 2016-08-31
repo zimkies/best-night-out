@@ -1,0 +1,7 @@
+{
+    "name": "Best Night Out",
+    "description": "A simple Ionic app for having a great time out",
+    "repository": "https://github.com/zimkies/best-night-out.git",
+    "logo": "http://pathToYourLogo.png",
+    "keywords": ["ionic", "BestNightOut"]
+}

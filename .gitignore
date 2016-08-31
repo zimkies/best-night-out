@@ -6,7 +6,7 @@ www/build/
 platforms/
 plugins/
 *.swp
-*.js
+app/**/.js
 .DS_Store
 Thumbs.db
 
