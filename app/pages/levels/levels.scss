@@ -1,0 +1,12 @@
+.levels {
+  .level {
+    border: color($colors, primary) 2px solid;
+    background-color: transparent;
+    margin: 2px;
+    &.selected {
+      background-color: transparent;
+      border: color($colors, secondary) 2px solid;
+    }
+
+  }
+}

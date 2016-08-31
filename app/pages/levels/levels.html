@@ -1,0 +1,33 @@
+<!--
+  Generated template for the LevelsPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>levels</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="levels">
+  <div>
+    <ion-badge secondary *ngFor="let level of levels" class="level" [class.selected]="currentLevel === level" >{{ level }}</ion-badge>
+  </div>
+
+  <hr/>
+
+  <h1 text-center>
+     Level {{ currentLevel }}
+  </h1>
+
+  <hr/>
+
+  <section text-center>
+    <button outline (click)="onClickEngage()">Engage</button>
+  </section>
+
+</ion-content>
