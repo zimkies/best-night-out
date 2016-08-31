@@ -11,3 +11,10 @@
 @import "../pages/contact/contact";
 @import "../pages/home/home";
 @import "../pages/instructions/instructions";
+@import "../pages/submissions/submissions";
+
+hr {
+  height: 1px;
+  background-color: $dull;
+  color: $dull;
+}
