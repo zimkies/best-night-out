@@ -13,44 +13,47 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="challenge" padding>
 
   <level-indicator [currentLevel]="challenge.level"></level-indicator>
 
+  <hr/>
+
   <div *ngIf="response==undefined">
 
-    <h1 [innerHTML]="challenge.content"></h1>
-
+    <div class="main-content">
+      <h1 text-center [innerHTML]="challenge.content"></h1>
+    </div>
     <hr/>
-
-    <section text-center>
+    <footer text-center>
       <button outline secondary (click)="onClickFail()">Failed it</button>
       <button outline primary (click)="onClickNail()">Nailed it!</button>
-    </section>
+    </footer>
   </div>
-
   <div *ngIf="response=='nailed'">
 
-    <h1>Nailed it! <br/><br/> (but let's be honest... everyone nails level 1)</h1>
+    <div text-center class="main-content">
 
+      <h1>Nailed it! <br/><br/> (but let's be honest... everyone nails level 1)</h1>
+
+    </div>
     <hr/>
-
-    <section text-center>
+    <footer text-center>
       <button outline primary (click)="onClickLevelUp()">Level Up</button>
-    </section>
+    </footer>
   </div>
 
   <div *ngIf="response=='failed'">
-
-    <h1>:(<br/>Looks like someone isn't bringing their A-game</h1>
+    <div text-center class="main-content failed">
+      <h1>:(<br/>Looks like someone isn't bringing their A-game</h1>
+    </div>
 
     <hr/>
 
-    <section text-center>
+    <footer text-center class="failed">
       <button outline secondary (click)="onClickConfirmFail()">ConfirmFail</button>
       <div>- OR -</div>
       <button outline primary (click)="onClickCancelFail()">Never give up!</button>
-    </section>
+    </footer>
   </div>
-
 </ion-content>
