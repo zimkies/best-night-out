@@ -14,7 +14,11 @@
 
 
 <ion-content padding>
+
+  <level-indicator [currentLevel]="challenge.level"></level-indicator>
+
   <div *ngIf="response==undefined">
+
     <h1 [innerHTML]="challenge.content"></h1>
 
     <hr/>

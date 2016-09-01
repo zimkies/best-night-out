@@ -14,9 +14,7 @@
 
 
 <ion-content padding class="levels">
-  <div>
-    <ion-badge secondary *ngFor="let level of levels" class="level" [class.selected]="currentLevel === level" >{{ level }}</ion-badge>
-  </div>
+  <level-indicator [currentLevel]="currentLevel"></level-indicator>
 
   <hr/>
 

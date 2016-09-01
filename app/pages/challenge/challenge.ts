@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { LevelsPage } from '../../pages/levels/levels';
 import { Challenge } from '../../models/challenge';
 import { ChallengeProvider } from '../../providers/challenge/challenge';
+import { LevelIndicator } from '../../components/level-indicator/level-indicator';
 
 /*
   Generated class for the ChallengePage page.
@@ -12,6 +13,7 @@ import { ChallengeProvider } from '../../providers/challenge/challenge';
 */
 @Component({
   templateUrl: 'build/pages/challenge/challenge.html',
+  directives: [ LevelIndicator ]
 })
 export class ChallengePage {
   challenge_id: number;
