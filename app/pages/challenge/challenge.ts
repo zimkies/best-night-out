@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { LevelsPage } from '../../pages/levels/levels';
 import { Challenge } from '../../models/challenge';
 import { ChallengeProvider } from '../../providers/challenge/challenge';
 
@@ -14,7 +15,7 @@ import { ChallengeProvider } from '../../providers/challenge/challenge';
 })
 export class ChallengePage {
   challenge_id: number;
-  challenge: any;
+  challenge: Challenge;
   response: any;
 
   constructor(
@@ -32,6 +33,9 @@ export class ChallengePage {
   }
 
   onClickConfirmFail(event) {
+    return this.navCtrl.push(LevelsPage, {
+      level: this.challenge.previousLevel()
+    });
   }
 
   onClickCancelFail(event) {
@@ -43,5 +47,8 @@ export class ChallengePage {
   }
 
   onClickLevelUp(event) {
+    return this.navCtrl.push(LevelsPage, {
+      level: this.challenge.nextLevel()
+    });
   }
 }

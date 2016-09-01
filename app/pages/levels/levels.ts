@@ -14,7 +14,7 @@ import { ChallengeProvider } from '../../providers/challenge/challenge';
 })
 export class LevelsPage {
   currentLevel: number
-  levels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  levels = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
   constructor(
     private navCtrl: NavController,

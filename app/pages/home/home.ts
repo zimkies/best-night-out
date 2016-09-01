@@ -21,7 +21,7 @@ export class HomePage {
 
   openStartPage(event) {
     return this.navCtrl.push(LevelsPage, {
-      level: 0
+      level: 1
     });
   }
 }
