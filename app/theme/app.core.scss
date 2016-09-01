@@ -37,3 +37,13 @@ body {
   max-width: 500px;
   background-color: $dull;
 }
+
+ion-navbar {
+  button.back-button {
+    color: $dull;
+  }
+
+  .toolbar-title {
+    color: $dull
+  }
+}
