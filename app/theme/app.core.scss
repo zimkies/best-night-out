@@ -7,7 +7,6 @@
 // By default each design mode includes these shared imports.
 // App Shared Sass variables belong in app.variables.scss.
 
-
 @import "../components/level-indicator/level-indicator";
 @import "../pages/about/about";
 @import "../pages/contact/contact";
@@ -21,4 +20,20 @@ hr {
   height: 1px;
   background-color: $dull;
   color: $dull;
+}
+
+.button-outline-primary, .button-outline-secondary {
+  color: $white;
+}
+
+
+h1.neon-header {
+  font-family: $neon-lights-font;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+body {
+  max-width: 500px;
+  background-color: $dull;
 }

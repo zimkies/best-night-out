@@ -1,5 +1,17 @@
 .home {
   h1 {
     font-size: 80px;
+    font-family: $neon-lights-font;
+    font-weight: bold;
+  }
+
+  button {
+    width: 180px;
+  }
+
+  .llc {
+    margin-top: 40px;
+    font-family: monospace;
+    font-size: 15px
   }
 }

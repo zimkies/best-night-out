@@ -1,14 +1,18 @@
 <ion-content padding class="home">
   <div text-right class="bar bar-header bar-dark">
-    <h1 class="title"><span primary>Best</span><br/><span secondary> Night</span><br/><span secondary> Out</span></h1>
+    <h1 class="title"><span primary>BEST</span><br/><span secondary> NIGHT</span><br/><span secondary> OUT</span></h1>
     <h4 right class="title">#Engage</h4>
   </div>
 
   <section text-center>
-    <button outline (click)="openStartPage()">Start</button>
+    <button outline primary (click)="openStartPage()">Start</button>
     <br/>
-    <button outline (click)="openInstructionsPage()">Instructions</button>
+    <button outline secondary (click)="openInstructionsPage()">Instructions</button>
     <br/>
-    <button outline (click)="openSubmissionsPage()">Submissions</button>
+    <button outline secondary (click)="openSubmissionsPage()">Submissions</button>
   </section>
+
+  <div class="llc" text-center>
+    &copy; 2016 Social-Mobile Media, LLC
+  </div>
 </ion-content>

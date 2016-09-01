@@ -35,7 +35,16 @@ $colors: (
   dull:       #595959
 );
 
+$white: white;
 $dull: #595959;
 $background-color: black;
-$text-color: white;
-$button-color: white;
+$text-color: $white;
+
+
+@font-face {
+    font-family: 'Neon Lights';
+    src: url('../fonts/neon-lights.tff');
+    font-weight: 200;
+}
+
+$neon-lights-font: "Neon Lights";
