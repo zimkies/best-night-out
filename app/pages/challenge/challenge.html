@@ -34,7 +34,8 @@
 
     <div text-center class="main-content">
 
-      <h1>Nailed it! <br/><br/> (but let's be honest... everyone nails level 1)</h1>
+      <h1 *ngIf="responseCopy" [innerHTML]="responseCopy"></h1>
+      <h1 *ngIf="responseCopy == undefined">Good work!</h1>
 
     </div>
     <hr/>
@@ -45,7 +46,10 @@
 
   <div *ngIf="response=='failed'">
     <div text-center class="main-content failed">
-      <h1>:(<br/>Looks like someone isn't bringing their A-game</h1>
+
+      <h1 *ngIf="responseCopy" [innerHTML]="responseCopy"></h1>
+      <h1 *ngIf="responseCopy == undefined">:(<br/>Looks like someone isn't bringing their A-game</h1>
+      <h1></h1>
     </div>
 
     <hr/>

@@ -42,4 +42,11 @@ export class ChallengeProvider {
       observer.complete();
     })
   }
+
+  saveResponse(id, response: string) {
+    return Observable.create(observer => {
+      observer.next(console.log("Saving response:", response))
+      observer.complete();
+    })
+  }
 }
