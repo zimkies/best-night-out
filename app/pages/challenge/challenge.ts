@@ -27,7 +27,12 @@ export class ChallengePage {
 
     ) {
     this.challenge_id = params.get('id')
-    this.challenge = challengeProvider.get(this.challenge_id)
+  }
+
+  ngOnInit() {
+    this.challengeProvider.get(this.challenge_id).subscribe(
+      challenge => this.challenge = challenge
+    )
   }
 
   onClickFail(event) {

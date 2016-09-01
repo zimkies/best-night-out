@@ -27,9 +27,8 @@ export class LevelsPage {
   }
 
   onClickEngage(event) {
-    let challenge = this.challengeProvider.getRandom(this.currentLevel)
-    return this.navCtrl.push(ChallengePage, {
-      id: challenge.id
-    });
+    this.challengeProvider.getRandom(this.currentLevel).subscribe(
+      challenge => this.navCtrl.push(ChallengePage, {id: challenge.id })
+     )
   }
 }
