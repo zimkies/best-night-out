@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ChallengePage } from '../challenge/challenge';
+import { ChallengeProvider } from '../../providers/challenge/challenge';
 
 /*
   Generated class for the LevelsPage page.
@@ -15,13 +16,18 @@ export class LevelsPage {
   currentLevel: number
   levels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-  constructor(private navCtrl: NavController, params: NavParams) {
+  constructor(
+    private navCtrl: NavController,
+    private params: NavParams,
+    private challengeProvider: ChallengeProvider
+    ) {
     this.currentLevel = params.get("level");
   }
 
   onClickEngage(event) {
+    let challenge = this.challengeProvider.getRandom(this.currentLevel)
     return this.navCtrl.push(ChallengePage, {
-      id: 0
+      id: challenge.id
     });
   }
 }

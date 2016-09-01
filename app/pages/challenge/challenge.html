@@ -14,6 +14,39 @@
 
 
 <ion-content padding>
- CHallenge: {{ challenge_id }}
+  <div *ngIf="response==undefined">
+    <h1 [innerHTML]="challenge.content"></h1>
+
+    <hr/>
+
+    <section text-center>
+      <button outline primary (click)="onClickFail()">Failed it</button>
+      <button outline secondary (click)="onClickNail()">Nailed it!</button>
+    </section>
+  </div>
+
+  <div *ngIf="response=='nailed'">
+
+    <h1>Nailed it! <br/><br/> (but let's be honest... everyone nails level 1)</h1>
+
+    <hr/>
+
+    <section text-center>
+      <button outline primary (click)="onClickLevelUp()">Level Up</button>
+    </section>
+  </div>
+
+  <div *ngIf="response=='failed'">
+
+    <h1>:(<br/>Looks like someone isn't bringing their A-game</h1>
+
+    <hr/>
+
+    <section text-center>
+      <button outline primary (click)="onClickConfirmFail()">ConfirmFail</button>
+      <div>- OR -</div>
+      <button outline secondary (click)="onClickCancelFail()">Never give up!</button>
+    </section>
+  </div>
 
 </ion-content>
