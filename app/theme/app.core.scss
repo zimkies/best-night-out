@@ -47,3 +47,8 @@ ion-navbar {
     color: $dull
   }
 }
+
+ion-content {
+  background-image: url('../../images/starry-sky.jpg');
+  background-size: 100%;
+}
