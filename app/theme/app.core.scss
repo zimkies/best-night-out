@@ -48,5 +48,6 @@ ion-navbar {
 
 ion-content {
   background-image: url('../../images/starry-sky.jpg');
-  background-size: 100%;
+  background-size: cover;
+  background-position: center;
 }
