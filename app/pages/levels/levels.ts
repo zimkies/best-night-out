@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { ChallengePage } from '../challenge/challenge';
 import { ChallengeProvider } from '../../providers/challenge/challenge';
 import { LevelIndicator } from '../../components/level-indicator/level-indicator';
+import {AdMob} from 'ionic-native'
 
 /*
   Generated class for the LevelsPage page.
@@ -26,9 +27,14 @@ export class LevelsPage {
     this.currentLevel = params.get("level");
   }
 
+  showInterstitialAdd() {
+    if (AdMob) AdMob.showInterstitial();
+  }
+
   onClickEngage(event) {
-    this.challengeProvider.getRandom(this.currentLevel).subscribe(
-      challenge => this.navCtrl.push(ChallengePage, {id: challenge.id })
-     )
+    this.showInterstitialAdd();
+    // this.challengeProvider.getRandom(this.currentLevel).subscribe(
+    //   challenge => this.navCtrl.push(ChallengePage, {id: challenge.id })
+    //  )
   }
 }
