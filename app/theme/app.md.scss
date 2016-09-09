@@ -11,6 +11,8 @@
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
+$screen-height: 627px;
+
 
 // Ionic Material Design Sass
 // --------------------------------------------------
@@ -29,3 +31,19 @@
 // App Material Design Only Sass
 // --------------------------------------------------
 // CSS that should only apply to the Material Design app
+
+
+h1.neon-header {
+  font-size: 30px;
+}
+
+.home {
+  footer {
+    .llc {
+      margin-top: 12px;
+    }
+
+  }
+}
+
+

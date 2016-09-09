@@ -2,7 +2,7 @@
   li {
     padding-top: 15px;
     padding-bottom: 15px;
-    font-size: 22px;
+    font-size: 21px;
   }
 
   h3 {
@@ -10,16 +10,16 @@
   }
 
   .main-content {
-    min-height: 380px;
+    min-height: $screen-height - 270px;
     padding-top: 25px;
     padding-bottom: 10px;
   }
 
   p {
-    font-size: 22px;
+    font-size: 21px;
   }
 
   footer {
-    padding-top: 20px
+    padding-top: 15px
   }
 }

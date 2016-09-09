@@ -1,17 +1,18 @@
 .instructions {
+  ul {
+    margin: 0px;
+  }
   li {
     padding-top: 15px;
     padding-bottom: 15px;
-    font-size: 22px;
+    font-size: 21px;
   }
 
-  .main-content {
-    min-height: 380px;
-    padding-top: 25px;
-    padding-bottom: 10px;
+  section {
+    min-height: $screen-height - 270px;
   }
 
   footer {
-    padding-top: 20px;
+    padding-top: 15px;
   }
 }

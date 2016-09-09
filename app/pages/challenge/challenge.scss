@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     display: flex;
-    min-height: 440px;
+    min-height: $screen-height - 227px;
     padding-left:20px;
     padding-right:20px;
     h1 {
@@ -11,7 +11,7 @@
     }
 
     &.failed {
-      min-height: 355px;
+      min-height: $screen-height - 312px;
     }
   }
 

@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     display: flex;
-    min-height: 440px;
+    min-height: $screen-height - 227px;
   }
 
   h1 {
