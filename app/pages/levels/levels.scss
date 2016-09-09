@@ -1,7 +1,9 @@
 .levels {
   .main-content {
-    padding-top: 150px;
-    min-height: 400px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    min-height: 440px;
   }
 
   h1 {
