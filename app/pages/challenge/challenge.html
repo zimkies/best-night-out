@@ -17,8 +17,8 @@
     </div>
     <hr/>
     <footer text-center>
-      <button outline secondary (click)="onClickFail()">Failed it</button>
-      <button outline primary (click)="onClickNail()">Nailed it!</button>
+      <button outline large secondary (click)="onClickFail()">Failed it</button>
+      <button outline large primary (click)="onClickNail()">Nailed it!</button>
     </footer>
   </div>
   <div *ngIf="response=='nailed'">
@@ -31,7 +31,7 @@
     </div>
     <hr/>
     <footer text-center>
-      <button outline primary (click)="onClickLevelUp()">Level Up</button>
+      <button outline large primary (click)="onClickLevelUp()">Level Up</button>
     </footer>
   </div>
 
@@ -46,9 +46,9 @@
     <hr/>
 
     <footer text-center class="failed">
-      <button outline secondary (click)="onClickConfirmFail()">Confirm Fail</button>
+      <button outline large secondary (click)="onClickConfirmFail()">Confirm Fail</button>
       <div>- OR -</div>
-      <button outline primary (click)="onClickCancelFail()">Never give up!</button>
+      <button outline large primary (click)="onClickCancelFail()">Never give up!</button>
     </footer>
   </div>
 </ion-content>

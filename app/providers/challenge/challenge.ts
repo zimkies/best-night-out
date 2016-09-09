@@ -19,13 +19,16 @@ export class ChallengeProvider {
 
   getRandom(level) {
     return Observable.create(observer => {
-      observer.next(
-        CHALLENGES_JSON.map(challenge_json => new Challenge(
+      let challenges: Challenge[] = CHALLENGES_JSON.map(challenge_json => new Challenge(
             challenge_json['id'],
             challenge_json['content'],
             challenge_json['level']
-          )).find(challenge => challenge.level === level)
-       );
+          )).filter(challenge => challenge.level === level);
+
+      console.log("getting random")
+      challenges[Math.floor(Math.random() * challenges.length)];
+
+      observer.next(challenges[Math.floor(Math.random() * challenges.length)]);
       observer.complete();
     })
   }

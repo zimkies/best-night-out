@@ -27,14 +27,20 @@ export class LevelsPage {
     this.currentLevel = params.get("level");
   }
 
-  showInterstitialAdd() {
-    if (AdMob) AdMob.showInterstitial();
+  onClickEngage(event) {
+    this.challengeProvider.getRandom(this.currentLevel).subscribe(
+      challenge => this.navCtrl.push(ChallengePage, {id: challenge.id })
+     )
+
+    if (this.shouldDisplayInterstitialAd()) this.showInterstitialAd()
   }
 
-  onClickEngage(event) {
-    this.showInterstitialAdd();
-    // this.challengeProvider.getRandom(this.currentLevel).subscribe(
-    //   challenge => this.navCtrl.push(ChallengePage, {id: challenge.id })
-    //  )
+  private showInterstitialAd() {
+    AdMob.showInterstitial();
+  }
+
+  private shouldDisplayInterstitialAd() {
+    // Display interstitial if it's loaded a certain percentage of the time
+    return (AdMob && AdMob.isInterstitialReady() && (Math.random() >= 0.8))
   }
 }

@@ -14,6 +14,42 @@ export class MyApp {
 
   private rootPage: any;
 
+  private prepareInterstitialAd() {
+    AdMob.prepareInterstitial({
+      adId:this.getAdmobId().interstitial,
+      isTesting:true, //comment this out before publishing the app
+      autoShow:false});
+  }
+
+  private getAdmobId() {
+    interface AdMobType {
+      banner:string,
+      interstitial:string
+    };
+
+    var admobid:AdMobType;
+
+    // select the right Ad Id according to platform
+    if (/(android)/i.test(navigator.userAgent)) {
+      admobid = { // for Android
+        banner: '',
+        interstitial: 'ca-app-pub-3267606224712670~4900790943'
+      };
+    } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
+      admobid = { // for iOS
+          banner: '',
+          interstitial: 'ca-app-pub-3267606224712670/9457244947'
+      };
+    } else {
+      admobid = { // for Windows Phone
+          banner: '',
+          interstitial: 'ca-app-pub-3267606224712670~4900790943'
+      };
+    }
+
+    return admobid;
+  }
+
   constructor(private platform: Platform) {
     this.rootPage = TabsPage;
 
@@ -22,40 +58,10 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
 
-      interface AdMobType {
-        banner:string,
-        interstitial:string
-      };
 
-      var admobid:AdMobType;
+      if(AdMob) this.prepareInterstitialAd()
 
-      // select the right Ad Id according to platform
-      if (/(android)/i.test(navigator.userAgent)) {
-        admobid = { // for Android
-          banner: '',
-          interstitial: 'ca-app-pub-3267606224712670/'
-        };
-      } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
-        admobid = { // for iOS
-            banner: '',
-            interstitial: 'ca-app-pub-3267606224712670/'
-        };
-      } else {
-        admobid = { // for Windows Phone
-            banner: '',
-            interstitial: 'ca-app-pub-3267606224712670/'
-        };
-      }
-
-      if(AdMob) AdMob.createBanner( {
-        adId:admobid.banner,
-        isTesting:true,//comment this out before publishing the app
-        autoShow:true} );
-
-      if(AdMob) AdMob.prepareInterstitial({
-        adId:admobid.interstitial,
-        isTesting:true, //comment this out before publishing the app
-        autoShow:true});
+      document.addEventListener('onAdDismiss', (data) => this.prepareInterstitialAd());
     });
   }
 }
